@@ -9,7 +9,7 @@
 
 ## Tugas Minggu ke 1
 
-<h1>LARAVEL</h1>
+- Nama aplikasi: LARAVEL
 - Tujuan install: menyederhanakan dan mempercepat proses pengembangan aplikasi web berbasis PHP melalui sintaks yang elegan dan ekspresif
 - Cara menjalankan secara lokal: Dengan menggunakan command di terminal "php artisan serve" maka kita bisa menjalankan secara lokal
 - Perbedaan Model, View, Controller: 
