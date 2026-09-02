@@ -16,3 +16,5 @@ App name: LARAVEL
     - Model bertugas mengolah data dan logika bisnis yang terhubung langsung ke database
     - View berfokus menyusun tampilan visual (UI) yang dilihat oleh pengguna. 
     - Controller bertindak sebagai jembatan yang menerima request pengguna, meminta data dari Model, lalu meneruskannya ke View untuk ditampilkan.
+<img src="Screenshot 2026-09-02 092346.png" alt="Latest Stable Version">
+<img src="Screenshot 2026-09-02 093356.png" alt="Latest Stable Version">
