@@ -7,14 +7,18 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Tugas Minggu ke 1
 
-App name: LARAVEL
+<h1>LARAVEL</h1>
 - Tujuan install: menyederhanakan dan mempercepat proses pengembangan aplikasi web berbasis PHP melalui sintaks yang elegan dan ekspresif
 - Cara menjalankan secara lokal: Dengan menggunakan command di terminal "php artisan serve" maka kita bisa menjalankan secara lokal
 - Perbedaan Model, View, Controller: 
     - Model bertugas mengolah data dan logika bisnis yang terhubung langsung ke database
     - View berfokus menyusun tampilan visual (UI) yang dilihat oleh pengguna. 
     - Controller bertindak sebagai jembatan yang menerima request pengguna, meminta data dari Model, lalu meneruskannya ke View untuk ditampilkan.
-<img src="Screenshot 2026-09-02 092346.png" alt="Latest Stable Version">
+
+## Tugas minggu ke 2
+
+- Output php artisan route:list
+
 <img src="Screenshot 2026-09-02 093356.png" alt="Latest Stable Version">
