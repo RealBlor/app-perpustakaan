@@ -10,9 +10,9 @@
 ## About Laravel
 
 App name: LARAVEL
-Tujuan install: menyederhanakan dan mempercepat proses pengembangan aplikasi web berbasis PHP melalui sintaks yang elegan dan ekspresif
-Cara menjalankan secara lokal: Dengan menggunakan command di terminal "php artisan serve" maka kita bisa menjalankan secara lokal
-Perbedaan Model, View, Controller: 
-    -Model bertugas mengolah data dan logika bisnis yang terhubung langsung ke database
-    -View berfokus menyusun tampilan visual (UI) yang dilihat oleh pengguna. 
-    -Controller bertindak sebagai jembatan yang menerima request pengguna, meminta data dari Model, lalu meneruskannya ke View untuk ditampilkan.
+- Tujuan install: menyederhanakan dan mempercepat proses pengembangan aplikasi web berbasis PHP melalui sintaks yang elegan dan ekspresif
+- Cara menjalankan secara lokal: Dengan menggunakan command di terminal "php artisan serve" maka kita bisa menjalankan secara lokal
+- Perbedaan Model, View, Controller: 
+    - Model bertugas mengolah data dan logika bisnis yang terhubung langsung ke database
+    - View berfokus menyusun tampilan visual (UI) yang dilihat oleh pengguna. 
+    - Controller bertindak sebagai jembatan yang menerima request pengguna, meminta data dari Model, lalu meneruskannya ke View untuk ditampilkan.
