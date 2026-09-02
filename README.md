@@ -25,4 +25,4 @@
 
 - Output dari [http://127.0.0.1:8000/categories/3]
 
-<img src="Foto tugas\Screenshot 2026-09-02 092346.png" alt="Foto>
+<img src="Foto tugas\Screenshot 2026-09-02 092346.png" alt="Foto">
