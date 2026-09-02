@@ -21,4 +21,8 @@
 
 - Output php artisan route:list
 
-<img src="Screenshot 2026-09-02 093356.png" alt="Latest Stable Version">
+<img src="Foto tugas\Screenshot 2026-09-02 093356.png" alt="Foto">
+
+- Output dari [http://127.0.0.1:8000/categories/3]
+
+<img src="Foto tugas\Screenshot 2026-09-02 092346.png" alt="Foto>
