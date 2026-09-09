@@ -26,3 +26,13 @@
 - Output dari [http://127.0.0.1:8000/categories/3]
 
 <img src="Foto tugas\Screenshot 2026-09-02 092346.png" alt="Foto">
+
+## Tugas minggu ke 3
+
+- Screenshot submit kosong
+
+<img src="Foto tugas\WarningTugas.png" alt="Minggu 3">
+
+- Screenshot submit berhasil
+
+<img src="Foto tugas\SuksesTugas.png" alt="Minggu 3">
