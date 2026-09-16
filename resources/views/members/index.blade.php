@@ -1,66 +1,38 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Daftar Nama</title>
-    <style>
-        body { font-family: sans-serif; margin: 40px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 16px; }
-        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
-        .success { background: #d1fae5; color: #065f46; padding: 10px 14px; border-radius: 4px; margin-top: 16px; }
-        .btn { display: inline-block; padding: 6px 14px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 4px; }
-        form.inline { display: inline; }
-    </style>
-</head>
-<body>
-    <h1>Daftar Nama</h1>
+@extends('layouts.app')
 
-    @if (session('success'))
-        <div class="success">{{ session('success') }}</div>
-    @endif
+@section('title', 'Daftar Anggota')
 
-    <p><a href="{{ route('members.create') }}" class="btn">+ Tambah Buku</a></p>
+@section('content')
+    <h1>Daftar Anggota</h1>
 
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nama</th>
                 <th>NIM</th>
                 <th>Email</th>
-                <th>Alamat</th>
-                <th>Nomor telepon</th>
+                <th>No. Telepon</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            @forelse ($Members as $member)
+            @forelse ($Members as $Member)
                 <tr>
-                    <td>{{ $member['Nama'] }}</td>
-                    <td>{{ $member['NIM'] }}</td>
-                    <td>{{ $member['Email'] }}</td>
-                    <td>{{ $member['Alamat'] }}</td>
-                    <td>{{ $member['Nomor_telepon'] }}</td>
-                    <td>{{ $member['Status'] }}</td>
-                    <td>
-                        <a href="{{ route('members.show', $member['Nama']) }}">Detail</a>
-                        |
-                        <a href="{{ route('members.edit', $member['Nama']) }}">Edit</a>
-                        |
-                        <form class="inline" action="{{ route('members.destroy', $member['Nama']) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Hapus</button>
-                        </form>
-                    </td>
+                    <td>{{ $Member['id'] }}</td>
+                    <td>{{ $Member['nama'] }}</td>
+                    <td>{{ $Member['nim'] }}</td>
+                    <td>{{ $Member['email'] }}</td>
+                    <td>{{ $Member['nomor_telepon'] }}</td>
+                    <td>{{ ucfirst($Member['status']) }}</td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="8">Belum ada data nama.</td>
+                    <td colspan="6">Belum ada data anggota.</td>
                 </tr>
             @endforelse
         </tbody>
     </table>
 
-    <p><em>Catatan: data di atas masih data dummy (array statis di Controller), belum dari database. Migration &amp; Model Eloquent baru dibuat di Pertemuan 5.</em></p>
-</body>
-</html>
+    <p><em>Catatan: data di atas masih data dummy (array statis di Controller). Form tambah/edit anggota dan CRUD lengkap anggota baru dibuat mulai Pertemuan 5.</em></p>
+@endsection

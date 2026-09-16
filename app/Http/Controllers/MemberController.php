@@ -13,10 +13,10 @@ class MemberController extends Controller
     ];
 
     private array $Members = [
-        ['Nama' => 'Ronuld', 'NIM' => 3125600001, 'Email' => 'AkuRonuld@gmail.com', 'Nomor_telepon' => '0812121212', 'Alamat' => 'Bandung', 'Status' => 'Aktif'],
-        ['Nama' => 'Jokowi', 'NIM' => 3125600002, 'Email' => 'Jokowihebat@gmail.com', 'Nomor_telepon' => '089999999', 'Alamat' => 'Sidoarjo, Sidokare', 'Status' => 'Tidak aktif'],
-        ['Nama' => 'Prabowo', 'NIM' => 3125600003, 'Email' => 'akupresident@gmail.com', 'Nomor_telepon' => '08222222', 'Alamat' => 'Jakarta', 'Status' => 'Tidak aktif'],
-    ];
+       ['id' => 1, 'nama' => 'Siti Aminah', 'nim' => '2310501001', 'email' => 'siti.aminah@pens.ac.id', 'nomor_telepon' => '081234567890', 'status' => 'aktif'],
+    ['id' => 2, 'nama' => 'Budi Santoso', 'nim' => '2310501002', 'email' => 'budi.santoso@pens.ac.id', 'nomor_telepon' => '081298765432', 'status' => 'aktif'],
+    ['id' => 3, 'nama' => 'Dewi Lestari', 'nim' => '2310501003', 'email' => 'dewi.lestari@pens.ac.id', 'nomor_telepon' => '081211122233', 'status' => 'nonaktif'],
+];
 
     public function index()
     {
