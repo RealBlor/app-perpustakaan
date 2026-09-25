@@ -10,7 +10,7 @@
     <div class="card category-form">
         <div class="card-header">
     <h1>Tambah Anggota</h1>
-    <p><a href="{{ route('members.index') }}">&larr; Kembali ke daftar anggota</a></p>
+    <p><a href="{{ route('members.index') }} " class="btn">&larr; Kembali ke daftar anggota</a></p>
 <div class="card-body">
     <form action="{{ route('members.store') }}" method="POST">
         @csrf

@@ -10,7 +10,7 @@
         <div class="card-header">
             <h1>Tambah Kategori</h1>
             <p>
-                <a href="{{ route('categories.index') }}"> &larr; Kembali ke daftar kategori
+                <a href="{{ route('categories.index') }}" class="btn"> &larr; Kembali ke daftar kategori
                 </a>
             </p>
         </div>
