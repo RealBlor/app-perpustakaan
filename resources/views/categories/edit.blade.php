@@ -3,36 +3,7 @@
 @section('title', 'Tambah Kategori')
 
 @section('content')
-<style>
-    .category-form {
-        max-width: 500px;
-    }
 
-    .category-form label {
-        display: block;
-        margin-top: 12px;
-        font-weight: bold;
-    }
-
-    .category-form input,
-    .category-form textarea {
-        width: 100%;
-        padding: 6px;
-        margin-top: 4px;
-        box-sizing: border-box;
-    }
-
-    .error {
-        color: #b91c1c;
-        font-size: 14px;
-        margin-top: 4px;
-    }
-
-    .btn {
-        margin-top: 20px;
-        padding: 8px 16px;
-    }
-</style>
 
 <div class="container">
     <div class="card category-form">

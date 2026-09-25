@@ -3,44 +3,14 @@
 @section('title', 'Tambah Kategori')
 
 @section('content')
-<style>
-    .category-form {
-        max-width: 500px;
-    }
 
-    .category-form label {
-        display: block;
-        margin-top: 12px;
-        font-weight: bold;
-    }
-
-    .category-form input,
-    .category-form textarea {
-        width: 100%;
-        padding: 6px;
-        margin-top: 4px;
-        box-sizing: border-box;
-    }
-
-    .error {
-        color: #b91c1c;
-        font-size: 14px;
-        margin-top: 4px;
-    }
-
-    .btn {
-        margin-top: 20px;
-        padding: 8px 16px;
-    }
-</style>
 
 <div class="container">
     <div class="card category-form">
         <div class="card-header">
             <h1>Tambah Kategori</h1>
             <p>
-                <a href="{{ route('categories.index') }}">
-                    &larr; Kembali ke daftar kategori
+                <a href="{{ route('categories.index') }}"> &larr; Kembali ke daftar kategori
                 </a>
             </p>
         </div>

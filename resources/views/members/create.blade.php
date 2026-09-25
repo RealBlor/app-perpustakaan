@@ -1,60 +1,64 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Tambah Buku</title>
-    <style>
-        body { font-family: sans-serif; margin: 40px; max-width: 500px; }
-        label { display: block; margin-top: 12px; font-weight: bold; }
-        input, select { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
-        .error { color: #b91c1c; font-size: 14px; margin-top: 4px; }
-        .btn { margin-top: 20px; padding: 8px 16px; background: #2563eb; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
-    </style>
+@extends('layouts.app')
+
+@section('title', 'Tambah Anggota')
+
+@section('content')
+
 </head>
 <body>
-    <h1>Tambah Buku</h1>
-    <p><a href="{{ route('members.index') }}">&larr; Kembali ke daftar buku</a></p>
-
+    <div class="container">
+    <div class="card category-form">
+        <div class="card-header">
+    <h1>Tambah Anggota</h1>
+    <p><a href="{{ route('members.index') }}">&larr; Kembali ke daftar anggota</a></p>
+<div class="card-body">
     <form action="{{ route('members.store') }}" method="POST">
         @csrf
 
-        <label for="Nama">nama</label>
-        <input type="text" name="Nama" id="Nama" value="{{ old('Nama') }}">
-        @error('Nama')
+        <label for="nama">Nama</label>
+        <input type="text" name="nama" id="nama" value="{{ old('nama') }}">
+        @error('nama')
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="NIM">NIM</label>
-        <input type="text" name="NIM" id="NIM" value="{{ old('NIM') }}">
-        @error('NIM')
+        <label for="nim">NIM</label>
+        <input type="text" name="nim" id="nim" value="{{ old('nim') }}">
+        @error('nim')
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="Email">Email</label>
-        <input type="text" name="Email" id="Email" value="{{ old('Email') }}" required="%@gmail.com">
-        @error('Email')
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{ old('email') }}">
+        @error('email')
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="Alamat">Alamat</label>
-        <input type="text" name="Alamat" id="Alamat" value="{{ old('Alamat') }}">
-        @error('Alamat')
+        <label for="alamat">Alamat</label>
+        <input type="text" name="alamat" id="alamat" value="{{ old('alamat') }}">
+        @error('alamat')
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="Nomor_telepon">Nomor telepon</label>
-        <input type="text" name="Nomor_telepon" id="Nomor_telepon" value="{{ old('Nomor_telepon') }}">
-        @error('Nomor_telepon')
+        <label for="nomor_telepon">Nomor telepon</label>
+        <input type="text" name="nomor_telepon" id="nomor_telepon" value="{{ old('nomor_telepon') }}">
+        @error('nomor_telepon')
             <div class="error">{{ $message }}</div>
         @enderror
 
-        <label for="Status">Status</label>
-        <input type="number" name="Status" id="Status" value="{{ old('Status', 1) }}">
-        @error('Status')
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            @foreach ($status as $value => $label)
+                <option value="{{ $value }}" @selected(old('status', 'aktif') === $value)>{{ $label }}</option>
+            @endforeach
+        </select>
+        @error('status')
             <div class="error">{{ $message }}</div>
         @enderror
 
         <button type="submit" class="btn">Simpan</button>
     </form>
-</body>
-</html>
+
+         </div>
+    </div>
+</div>
+@endsection

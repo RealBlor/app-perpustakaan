@@ -18,25 +18,25 @@ class StoreMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Nama' => 'required|string|max:200',
-            'NIM' => 'required|string|max:100',
-            'Email' => 'required|string|max:200',
-            'Nomor_telepon' => 'required|string|max:100',
-            'Alamat' => 'required|string|max:20',
-            'Status' => 'required|integer|min:0',
+            'nama' => 'required|string|max:100',
+            'nim' => 'required|string|max:20|unique:members,nim',
+            'email' => 'required|email|max:100|unique:members,email',
+            'nomor_telepon' => 'required|string|max:15',
+            'alamat' => 'required|string',
+            'status' => 'required|in:aktif,nonaktif',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'Nama.required' => 'Nama wajib diisi.',
-            'Nama.max' => 'Nama maksimal 200 karakter.',
-            'NIM.required' => 'NIM wajib diisi.',
-            'Email.required' => 'Email wajib diisi.',
-            'Nomor_telepon.required' => 'Nomor telepon wajib diisi.',
-            'Alamat.required' => 'Alamat wajib diisi.',
-            'Status.required' => 'Status diisi aktif atau tidak aktif.',
+            'nama.required' => 'Nama wajib diisi.',
+            'nama.max' => 'Nama maksimal 100 karakter.',
+            'nim.required' => 'NIM wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'nomor_telepon.required' => 'Nomor telepon wajib diisi.',
+            'alamat.required' => 'Alamat wajib diisi.',
+            'status.required' => 'Status wajib diisi aktif atau tidak aktif.',
         ];
     }
 }
