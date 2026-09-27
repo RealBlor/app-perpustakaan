@@ -36,3 +36,14 @@
 - Screenshot submit berhasil
 
 <img src="Foto tugas\SuksesTugas.png" alt="Minggu 3">
+
+## Minggu ke 4
+
+- Menggunakan blade sebagai tampilan template
+- Membuat layout system di folder views
+
+## Minggu ke 5
+
+- Membuat sistem CRUD(Create, Read, Update, Delete)
+- Melakukan migrasi data, membuat data yang bisa di simpan 
+- Elonquent menebak nama tabel dari nama Model tanpa perlu dikonfigurasi manual, selama konvensi penamaan diikuti dengan benar

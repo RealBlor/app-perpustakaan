@@ -7,6 +7,12 @@
 
     <p><a href="{{ route('members.create')}}" class="btn"> Tambah Anggota </a></p>
 
+    <form action="{{ route('members.index') }}" method="GET">
+        <label for="search">Cari nama anggota</label>
+        <input type="text" name="search" id="search" value="{{ request('search') }}">
+        <button type="submit">Cari</button>
+    </form>
+
     <table>
         <thead>
             <tr>
@@ -20,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($Members as $Member)
+            @forelse ($members as $Member)
                 <tr>
                     <td>{{ $Member['id'] }}</td>
                     <td>{{ $Member['nama'] }}</td>
@@ -47,6 +53,8 @@
             @endforelse
         </tbody>
     </table>
+
+    {{ $members->appends(request()->query())->links() }}
 
     <p><em>Catatan: data di atas masih data dummy (array statis di Controller). Form tambah/edit anggota dan CRUD lengkap anggota baru dibuat mulai Pertemuan 5.</em></p>
 @endsection
