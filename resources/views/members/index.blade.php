@@ -5,7 +5,7 @@
 @section('content')
     <h1>Daftar Anggota</h1>
 
-    <p><a href="{{ route('members.create')}}" class="btn"> Tambah Anggota</a></p>
+    <p><a href="{{ route('members.create')}}" class="btn"> Tambah Anggota </a></p>
 
     <table>
         <thead>
@@ -16,6 +16,7 @@
                 <th>Email</th>
                 <th>No. Telepon</th>
                 <th>Status</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,17 @@
                     <td>{{ $Member['email'] }}</td>
                     <td>{{ $Member['nomor_telepon'] }}</td>
                     <td>{{ ucfirst($Member['status']) }}</td>
+                    <td>
+                        <a href="{{ route('members.show', $Member['id']) }}">Detail</a>
+                        |
+                        <a href="{{ route('members.edit', $Member['id']) }}">Edit</a>
+                        |
+                        <form class="inline" action="{{ route('members.destroy', $Member['id']) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr>
