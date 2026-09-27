@@ -42,7 +42,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6">Belum ada data anggota.</td>
+                    <td colspan="8">Belum ada data anggota.</td>
                 </tr>
             @endforelse
         </tbody>
