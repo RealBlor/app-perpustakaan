@@ -47,3 +47,10 @@
 - Membuat sistem CRUD(Create, Read, Update, Delete)
 - Melakukan migrasi data, membuat data yang bisa di simpan 
 - Elonquent menebak nama tabel dari nama Model tanpa perlu dikonfigurasi manual, selama konvensi penamaan diikuti dengan benar
+<img src="Foto tugas\Minggu5Member.png" alt="Minggu 5">
+
+- Screenshot tampilan halaman member
+
+<img src="Foto tugas\minggu5Search.png" alt="Minggu5">
+
+- Screenshot fitur search
