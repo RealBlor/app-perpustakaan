@@ -55,3 +55,7 @@
 - Screenshot fitur search
 
 <img src="Foto tugas\minggu5Search.png" alt="Minggu5">
+
+## minggu ke 6 
+
+

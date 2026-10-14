@@ -16,6 +16,7 @@
 <body>
     <h1>Tambah Peminjaman</h1>
     <p><a href="{{ route('loans.index') }}">&larr; Kembali ke daftar peminjaman</a></p>
+    <p><em>Petugas pencatat: {{ auth()->user()->name }} (otomatis dari akun yang login).</em></p>
 
     <form action="{{ route('loans.store') }}" method="POST">
         @csrf
