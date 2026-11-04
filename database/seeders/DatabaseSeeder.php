@@ -11,13 +11,13 @@ class DatabaseSeeder extends Seeder
     use WithoutModelEvents;
 
     public function run(): void
-    {
-        $this->call([
+{
+    $this->call([
         UserSeeder::class,
-        ]);
-//User::factory()->create([
-  //          'name' => 'Test User',
-    //        'email' => 'test@example.com',
-      //  ]);
-    }
+        CategorySeeder::class,
+        BookSeeder::class,
+        MemberSeeder::class,
+        LoanSeeder::class,
+    ]);
+}
 }
