@@ -83,6 +83,13 @@ class BookController extends Controller
     public function destroy(string $id)
     {
         $book = Book::findOrFail($id);
+
+        // Buku yang pernah dipinjam tidak boleh dihapus (riwayat peminjaman akan rusak).
+        if ($book->loanItems()->exists()) {
+            return redirect()->route('books.index')
+                ->with('error', 'Buku tidak dapat dihapus karena tercatat dalam riwayat peminjaman.');
+        }
+
         $book->delete();
 
         return redirect()->route('books.index')

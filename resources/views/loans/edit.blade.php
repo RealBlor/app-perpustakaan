@@ -1,47 +1,40 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar Peminjaman')
+@section('title', 'Edit Peminjaman')
 
 @section('content')
-
-<body>
     <h1>Edit Peminjaman</h1>
     <p><a href="{{ route('loans.index') }}">&larr; Kembali ke daftar peminjaman</a></p>
 
-    <label>Anggota</label>
-    <div class="readonly">{{ $loan['member']['nama'] }} ({{ $loan['member']['nim'] }})</div>
+    <div class="form-stack">
+        <label>Anggota</label>
+        <div>{{ $loan['member']['nama'] }} ({{ $loan['member']['nim'] }})</div>
 
-    <label>Buku</label>
-    <div class="readonly">
-        @foreach ($loan['loanItems'] as $item)
-            {{ $item['book']['judul'] }}@if (!$loop->last), @endif
-        @endforeach
+        <label>Buku</label>
+        <div>
+            @foreach ($loan['loanItems'] as $item)
+                {{ $item['book']['judul'] }}@if (!$loop->last), @endif
+            @endforeach
+        </div>
+
+        <label>Status</label>
+        <div>
+            <span class="badge badge-{{ $loan['status'] }}">{{ ucfirst($loan['status']) }}</span>
+            <span class="muted">(diatur otomatis; gunakan tombol Kembalikan untuk menutup peminjaman)</span>
+        </div>
+
+        <form action="{{ route('loans.update', $loan['id']) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+            <label for="tanggal_kembali">Tanggal Kembali (perpanjangan)</label>
+            <input type="date" name="tanggal_kembali" id="tanggal_kembali"
+                   value="{{ old('tanggal_kembali', \Illuminate\Support\Str::substr($loan['tanggal_kembali'], 0, 10)) }}">
+            @error('tanggal_kembali')
+                <div class="error">{{ $message }}</div>
+            @enderror
+
+            <button type="submit" class="btn" style="margin-top: 20px;">Perbarui</button>
+        </form>
     </div>
-
-    <form action="{{ route('loans.update', $loan['id']) }}" method="POST">
-        @csrf
-        @method('PUT')
-        <input type="hidden" name="tanggal_pinjam" value="{{ $loan['tanggal_pinjam'] }}">
-
-        <label for="tanggal_kembali">Tanggal Kembali</label>
-        <input type="date" name="tanggal_kembali" id="tanggal_kembali" value="{{ old('tanggal_kembali', $loan['tanggal_kembali']) }}">
-        @error('tanggal_kembali')
-            <div class="error">{{ $message }}</div>
-        @enderror
-
-        <label for="status">Status</label>
-        <select name="status" id="status">
-            <option value="dipinjam" @selected(old('status', $loan['status']) == 'dipinjam')>Dipinjam</option>
-            <option value="dikembalikan" @selected(old('status', $loan['status']) == 'dikembalikan')>Dikembalikan</option>
-            <option value="terlambat" @selected(old('status', $loan['status']) == 'terlambat')>Terlambat</option>
-        </select>
-        @error('status')
-            <div class="error">{{ $message }}</div>
-        @enderror
-
-        <button type="submit" class="btn">Perbarui</button>
-    </form>
-</body>
-</html>
-
 @endsection
